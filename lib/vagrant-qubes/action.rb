@@ -64,11 +64,18 @@ module VagrantPlugins
       def self.action_destroy
         Vagrant::Action::Builder.new.tap do |b|
           b.use Call, ReadState do |env1, b1|
-            b1.use Halt unless env1[:machine_state] == 'halted'
             b1.use ReadState
-            b1.use Call, WaitForState, :halted, 240 do |env2, b2|
-              if env2[:result] == 'True'
-                b2.use Destroy
+            if env1[:machine_state].to_s == 'not_created'
+              env1[:ui].info I18n.t('vagrant_qubes.vagrant_qubes_message',
+                message: 'Not destroying VM in state ' + env1[:machine_state].to_s)
+            else
+              b1.use Halt unless env1[:machine_state] == 'halted'
+              b1.use ReadState
+              b1.use Call, WaitForState, :halted, 240 do |env2, b2|
+                b2.use ReadState
+                if env2[:result] == 'True'
+                  b2.use Destroy
+                end
               end
             end
           end

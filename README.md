@@ -4,9 +4,9 @@ This is a vagrant provider for qubes.
 
 If you don't know what qubes is, this is probably not somehting that you will want to experiment with yet.
 
-The strucutre, and large chunks of code in here have been inspired by (and in some cases copied from) Jonathan Senkerik's ESXi plugin "vagrant-vmware-esxi" https://github.com/josenk/vagrant-vmware-esxi  without the help of that I wouldn't have been able to put this together.
+The structure, and large chunks of code in here have been inspired by (and in some cases copied from) Jonathan Senkerik's ESXi plugin "vagrant-vmware-esxi" https://github.com/josenk/vagrant-vmware-esxi  without the help of that I wouldn't have been able to put this together.
 
-Right now, this should be considered alpha at best, basic "up" and "Destroy" works for a minimally configured AppVM based on a Vagrantfile along these lines
+Right now, this should be considered alpha at best, basic "up" and "destroy" works for a minimally configured AppVM based on a Vagrantfile along these lines
 
 ```
 vms = {

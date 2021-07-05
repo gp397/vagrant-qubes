@@ -1,0 +1,55 @@
+en:
+  vagrant_qubes:
+    support: |-
+      -----------------------:----------------------
+      Please buy me beer if you meet me
+      -----------------------:----------------------
+      Author                 : Gary Pentland
+    errors:
+      general_error: |-
+        There was an error.
+          %{message}
+      qrexec_error: |-
+        There was an error executing qrexec - please configure qubes-rpc.
+          %{message}
+    vagrant_qubes_message: |-
+      --- %{message}
+    vmbuild_not_done: |-
+      Virtual Machine will be built.
+    vmbuild_already_done: |-
+      Virtual Machine is already built.
+    already_running: |-
+      The VM is already running.
+    already_halted: |-
+      The VM is already halted.
+#    already_suspended: |-
+#      The VM is already suspended.
+#    already_destroyed: |-
+#      The VM is destroyed.
+#    snapshot_saved: |-
+#      The snapshot has been saved.
+#    snapshot_deleted: |-
+#      The snapshot has been deleted.
+#    snapshot_restored: |-
+#      The snapshot has been restored.
+    states:
+      running:
+        short: |-
+          running
+        long: |-
+          The virtual machine is running.
+      halted:
+        short: |-
+          halted
+        long: |-
+          The virtual machine is halted.
+      transient:
+        short: |-
+          transient
+        long: |-
+          The virtual machine is transitioning between states.
+      not_created:
+        short: |-
+          not created
+        long: |-
+          No Virtual Machines are created.

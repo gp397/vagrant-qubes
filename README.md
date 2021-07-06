@@ -1,10 +1,12 @@
 # Vagrant::Qubes
 
-This is a vagrant provider for qubes.
+This is not fully thought through or fully secured, use it at your own risk!
 
-If you don't know what qubes is, this is probably not somehting that you will want to experiment with yet.
+This my first attempt at writing a vagrant provider for qubes, and indeed one of my early attempts at writing anything in Ruby.  If you don't know what qubes is, this is probably not somehting that you will want to experiment with yet.
 
-The structure, and large chunks of code in here have been inspired by (and in some cases copied from) Jonathan Senkerik's ESXi plugin "vagrant-vmware-esxi" https://github.com/josenk/vagrant-vmware-esxi  without the help of that I wouldn't have been able to put this together.
+The structure, and large chunks of code in here have been inspired by Jonathan Senkerik's ESXi plugin "vagrant-vmware-esxi" https://github.com/josenk/vagrant-vmware-esxi  without the help of that I wouldn't have been able to put this together.
+
+If you are looking at this, it will need some setup on your Qubes machine in order to work, I suggest you take a look at https://github.com/gp397/salt-for-vagrant-qubes which is my first attempt at using [Saltstack](https://saltstack.com) to setup my Vagrant test lab.
 
 Right now, this should be considered alpha at best, basic "up" and "destroy" works for a minimally configured AppVM based on a Vagrantfile along these lines
 
@@ -35,6 +37,10 @@ Vagrant.configure("2") do |config|
 end
 ```
 
+Provision etc. does not yet work due to networking configuration needed to enable that.
+
+This is not fully thought through or fully secured, use it at your own risk!
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -55,12 +61,9 @@ Or install it yourself as:
 
 TODO: Write usage instructions here
 
-## Development
-
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/gp397/vagrant-qubes. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/gp397/vagrant-qubes/blob/master/CODE_OF_CONDUCT.md).
-
 
 ## License
 

@@ -12,9 +12,9 @@ Right now, this should be considered alpha at best, basic "up" and "destroy" wor
 
 ```
 vms = {
-  "test1" => ["AppVM","red","fedora-33", 2,  2048, "sys-firewall"],
-  "test2" => ["AppVM","red","fedora-33", 2,  2048, "sys-firewall"],
-  "test3" => ["AppVM","red","fedora-33", 2,  2048, "sys-firewall"],
+  "test1" => ["AppVM","red","fedora-33", 2,  2048, "vagrant"],
+  "test2" => ["AppVM","red","fedora-33", 2,  2048, "vagrant"],
+  "test3" => ["AppVM","red","fedora-33", 2,  2048, "vagrant"],
 }
 
 Vagrant.configure("2") do |config|

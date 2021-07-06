@@ -43,23 +43,17 @@ This is not fully thought through or fully secured, use it at your own risk!
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Run this in your AppVM
 
-```ruby
-gem 'vagrant-qubes'
+``` 
+vagrant plugin install vagrant-qubes
 ```
 
-And then execute:
+## TODO
 
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install vagrant-qubes
-
-## Usage
-
-TODO: Write usage instructions here
+There is a lot to do, in no particular order:
+- Extend to support Standalone VMs/HVMs
+- Sort out networking, and therefore provisioning
 
 ## Contributing
 

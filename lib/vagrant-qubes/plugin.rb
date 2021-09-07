@@ -20,6 +20,12 @@ module VagrantPlugins
         Provider
       end
 
+      #  Prints the IP address of the guest
+      command('address') do
+        require_relative 'command'
+        CapAddress
+      end
+
       # This initializes the internationalization strings.
       def self.setup_i18n
         require 'pathname'

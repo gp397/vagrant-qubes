@@ -68,8 +68,8 @@ module VagrantPlugins
             if env1[:result] == 'True'
               b1.use ReadState
               b1.use Provision
-              #b1.use SyncedFolderCleanup
-              #b1.use SyncedFolders
+              b1.use SyncedFolderCleanup
+              b1.use SyncedFolders
               #b1.use SetHostname
             end
           end

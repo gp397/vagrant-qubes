@@ -45,7 +45,7 @@ module VagrantPlugins
                 + ' ' + config.guest_numvcpus.to_s\
                 + ' ' + config.guest_memsize.to_s\
                 + ' ' + config.guest_netvm\
-                + '"| qrexec-client-vm dom0 vagrant_create+' + env[:machine].config.vm.hostname
+                + '" | qrexec-client-vm dom0 vagrant_create+' + env[:machine].config.vm.hostname
               stdout, stderr, status = Open3.capture3(command)
               if status != 0
                 raise Errors::QRExecError,

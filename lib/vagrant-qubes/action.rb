@@ -30,16 +30,31 @@ module VagrantPlugins
         end
       end
 
+      def self.action_ssh
+        Vagrant::Action::Builder.new.tap do |b|
+          b.use ReadState
+          b.use ReadSSHInfo
+          b.use SSHExec
+        end
+      end
+
+      def self.action_openfirewall
+        Vagrant::Action::Builder.new.tap do |b|
+          b.use ReadState
+          b.use OpenFirewall
+        end
+      end
+
       def self.action_up
         Vagrant::Action::Builder.new.tap do |b|
           b.use ConfigValidate
-          # b.use HandleBox - This downloads the "box"
           b.use ReadState
           b.use CreateVM
           b.use ReadState
           b.use Boot
           b.use Call, WaitForState, :running, 240 do |env1, b1|
             if env1[:result] == 'True'
+              b1.use action_openfirewall
               b1.use action_provision
             end
           end
@@ -52,7 +67,7 @@ module VagrantPlugins
           b.use Call, WaitForState, :running, 240 do |env1, b1|
             if env1[:result] == 'True'
               b1.use ReadState
-              #b1.use Provision
+              b1.use Provision
               #b1.use SyncedFolderCleanup
               #b1.use SyncedFolders
               #b1.use SetHostname
@@ -91,6 +106,7 @@ module VagrantPlugins
       autoload :ReadSSHInfo, action_root.join('read_ssh_info')
       autoload :Halt, action_root.join('halt')
       autoload :Destroy, action_root.join('destroy')
+      autoload :OpenFirewall, action_root.join('openfirewall')
     end
   end
 end

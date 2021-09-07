@@ -37,7 +37,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-Provision etc. does not yet work due to networking configuration needed to enable that.
+Currently, the plugin will insert a firewall rule allowing the NetVM to communicate with the vagrant created machine... this eanbles provision and "vagrant ssh <name>" etc. to work.
 
 This is not fully thought through or fully secured, use it at your own risk!
 
@@ -53,7 +53,7 @@ vagrant plugin install vagrant-qubes
 
 There is a lot to do, in no particular order:
 - Extend to support Standalone VMs/HVMs
-- Sort out networking, and therefore provisioning
+- Sort out networking (possibly by an option) so that Vagrant's children can talk to each other
 
 ## Contributing
 

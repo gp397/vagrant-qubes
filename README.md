@@ -49,11 +49,16 @@ Run this in your AppVM
 vagrant plugin install vagrant-qubes
 ```
 
+## Guest networking
+
+Check out https://github.com/gp397/salt-for-vagrant-qubes it has a script that will enable networking between guests.
+
+It requires an ssh server and puppet in the guest template, the salt formula takes care of all of that though.
+
 ## TODO
 
 There is a lot to do, in no particular order:
 - Extend to support Standalone VMs/HVMs
-- Sort out networking (possibly by an option) so that Vagrant's children can talk to each other
 
 ## Contributing
 

@@ -51,6 +51,7 @@ module VagrantPlugins
                 raise Errors::QRExecError,
                       message: 'qrexec failed with status' + status.to_s
               end
+              env[:machine].id = 1
             else
               raise Errors::GeneralError,
                     message: 'guest type ' + config.guest_type + ' is not supported'

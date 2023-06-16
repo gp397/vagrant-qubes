@@ -37,7 +37,7 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-Currently, the plugin will insert a firewall rule allowing the NetVM to communicate with the vagrant created machine... this eanbles provision and "vagrant ssh <name>" etc. to work.
+Currently, the plugin will insert a firewall rule allowing the NetVM to communicate with the vagrant created machine... this enables provision and "vagrant ssh <name>" etc. to work.
 
 This is not fully thought through or fully secured, use it at your own risk!
 

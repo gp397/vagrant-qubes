@@ -4,7 +4,7 @@ require File.expand_path('../lib/vagrant-qubes/version', __FILE__)
 Gem::Specification.new do |spec|
   spec.name          = "vagrant-qubes"
   spec.version       = VagrantPlugins::Qubes::VERSION
-  spec.date          = '2021-06-30'
+  spec.date          = '2023-06-16'
   spec.authors       = ["Gary Pentland"]
   spec.email         = [""]
 
